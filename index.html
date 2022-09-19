@@ -23,7 +23,7 @@ Html5Qrcode.getCameras().then(devices => {
   if (devices && devices.length) {
     var cameraId = devices[0].id;
 
-        html5QrCode.start(cameraId, {facingMode: "environment", fps: 30,    // Optional, frame per seconds for qr code scanning
+        html5QrCode.start(cameraId, { facingMode: { exact: "environment"}, fps: 30,    // Optional, frame per seconds for qr code scanning
             qrbox: { width: 250, height: 250 }  // Optional, if you want bounded box UI
         },
 
@@ -43,7 +43,6 @@ Html5Qrcode.getCameras().then(devices => {
   },
   (errorMessage) => {
     // parse error, ignore it.
-    window.location.href = "http://youtube.com/";
   })
 .catch((err) => {
   // Start failed, handle it.
