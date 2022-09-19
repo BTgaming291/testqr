@@ -9,6 +9,8 @@
 <body>
     <script src="html5-qrcode.min.js"></script>
     <div id="reader"></div>
+    <p id="demo"></p>
+
     <script type="text/javascript">
 
 
@@ -27,7 +29,7 @@ Html5Qrcode.getCameras().then(devices => {
             qrbox: { width: 250, height: 250 }  // Optional, if you want bounded box UI
         },
 
-        
+        document.getElementById("demo").innerHTML = JSON.stringify(devices),
 
   (decodedText, decodedResult) => {
     console.log(decodedText);
